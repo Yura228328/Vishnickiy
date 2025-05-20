@@ -1,0 +1,384 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:visited, a:focus, a:hover {
+  color: #fff;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+/*-------------------------------*/
+body {
+  font-family: "Rubik";
+  background-color: #000;
+  color: #fff;
+}
+
+[class*=__container] {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #020227;
+}
+.header__container {
+  min-height: 99px;
+  align-items: center;
+  display: flex;
+}
+.header__logo img {
+  max-width: 100px;
+}
+
+.menu__list {
+  display: flex;
+  padding-left: 20px;
+}
+.menu__item {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0px 25px;
+  color: #fff;
+}
+
+.vstup {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 610px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/fon1.jpg);
+}
+.vstup__main h1 {
+  font-family: "Playwrite DK Loopet";
+  font-size: 50px;
+  font-weight: 400;
+}
+.vstup__second {
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.about__container {
+  background-color: #12032b;
+  padding: 0px 20px;
+}
+.about__h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.about__main h2 {
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.about__item {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.lastitem {
+  padding-bottom: 25px;
+}
+
+.footer {
+  background-color: #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+/*-------------------------------*/
+.fon {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 610px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/fonaudio.jpg);
+}
+.fon__main {
+  font-family: "Playwrite DK Loopet";
+  font-size: 50px;
+  font-weight: 400;
+}
+.fon__second {
+  padding-top: 10px;
+  font-size: 25px;
+}
+.fon__second2 {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.sound__audiolist {
+  padding-top: 30px;
+}
+.sound__headline {
+  padding-top: 25px;
+}
+.sound__headline span {
+  font-family: "Playwrite DK Loopet";
+}
+.sound__headline h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/*------------КНОПОЧКА-------------------*/
+.button:hover {
+  border-radius: 10px;
+  transition: all 0.8s ease 0.2s;
+  box-shadow: 0 0 40px rgba(139, 69, 19, 0.6);
+}
+
+.button {
+  width: 280px;
+  height: 60px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+}
+.button audio {
+  display: none;
+}
+.button__text span {
+  font-family: "Playwrite DK Loopet";
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+}
+.button__wave {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background-color: #8B4513;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.8s ease 0s;
+}
+
+.button__wave:after,
+.button__wave:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 250%;
+  height: 250%;
+  transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+}
+
+.button__wave:before {
+  background-color: #000;
+  border-radius: 48%;
+  animation: waves 5s infinite linear;
+}
+
+.button__wave:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 44%;
+  animation: waves 10s infinite linear;
+}
+
+.button:hover .button__wave {
+  top: -50px;
+}
+
+@keyframes waves {
+  0% {
+    transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+  }
+}
+/*-------------------------------*/
+.sound__three-one {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.sound__kard {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sount__text {
+  text-align: center;
+  font-size: 25px;
+  line-height: 28px;
+  letter-spacing: 0, 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.last-one {
+  padding-bottom: 40px;
+}
+
+.fongal {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/fonGal.jpg);
+}
+
+/*-------------------------------*/
+.oblik {
+  padding-bottom: 20px;
+  display: flex;
+}
+.oblik__panel-1 {
+  background-image: url("../img/gallery/obl/obl1.jpg");
+}
+.oblik__panel-2 {
+  background-image: url("../img/gallery/obl/obl2.jpg");
+}
+.oblik__panel-3 {
+  background-image: url("../img/gallery/obl/obl3.jpg");
+}
+.oblik__panel-4 {
+  background-image: url("../img/gallery/obl/obl4.jpg");
+}
+
+.sisi {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 0 10px;
+  position: relative;
+  transition: all 400ms ease-in;
+}
+.sisi h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.sisi.active {
+  flex: 5;
+}
+
+.sisi.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.main__zag-obl {
+  padding-top: 30px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.main__zag-obl2 {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.gkard {
+  padding-bottom: 40px;
+}
+.gkard__threefoto {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.gkard__gkard {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  max-width: 400px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.gkard__text {
+  display: flex;
+  text-align: center;
+  font-size: 25px;
+  line-height: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 400px;
+}
